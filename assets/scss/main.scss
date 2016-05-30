@@ -1,0 +1,55 @@
+@import '_normalize';
+
+* {
+  box-sizing: border-box;
+}
+
+%clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.media {
+  &-list {
+    @extend %clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+    &__item {
+      float: left;
+      display: inline-block;
+      min-height: 450px;
+      min-width: 320px;
+      width: 340px;
+      height: 470px;
+      padding: 10px;
+      outline: 1px solid fade-out(#000, 0.9);
+      margin: 5px;
+    }
+  }
+
+  &__title {
+    max-height: 100px;
+    height: 100px;
+    overflow-y: auto;
+    margin: 10px 0;
+    padding: 5px;
+    transition: outline 0.7 linear;
+
+    &--long:hover {
+      outline: 1px solid fade-out(#000, 0.4);
+      cursor: pointer;
+    }
+  }
+}
