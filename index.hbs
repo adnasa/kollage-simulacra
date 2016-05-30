@@ -6,13 +6,15 @@
     <title>Stuffed list</title>
   </head>
   <body>
-    {{> media-item }}
     <template id="app-markup">
       <ul class="media-list">
         <li class="media-list__item"><li>
       </ul>
     </template>
     <div id="app"></div>
+
+    {{> media-item }}
+    {{> modal }}
     <script type="text/javascript" src="dist/index.js"></script>
   </body>
 </html>
