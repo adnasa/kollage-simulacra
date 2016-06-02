@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_PATH=source $(npm bin)/gulp build",
+    "build": "NODE_PATH=lib:./node_modules $(npm bin)/gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
