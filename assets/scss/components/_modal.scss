@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 8000;
   top: 0;
+  left: 0;
 
   &__background {
     width: inherit;
@@ -14,15 +15,25 @@
 
   &__modal-element {
     background-color: white;
+    min-height: 500px;
     height: 500px;
-    left: calc(50% - 40%);
+    left: calc(50% - 300px);
     position: absolute;
     top: 30%;
     width: 80%;
+    max-width: 600px;
   }
+}
 
+.modal {
   &.open {
     display: block;
+    .media {
+      &__likes,
+      &__title {
+        @extend %hidden;
+      }
+    }
   }
 }
 
@@ -42,9 +53,27 @@
     height: 100px;
   }
 
-  &__content {
+  &__body {
     min-height: 300px;
     height: 300px;
     overflow-y: auto;
+  }
+}
+
+
+.modal-element__body {
+  @extend %clearfix;
+  .body {
+    &__content, &__comment {
+      float: left;
+      display: inline-block;
+    }
+    &__content {
+      width: 320px;
+    }
+    
+    &__comment {
+      width: calc(100% - 320px);
+    }
   }
 }
